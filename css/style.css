@@ -5,68 +5,75 @@
   text-decoration: none;
 }
 
-body{
-    background: black;
-    color: rgb(161, 161, 161);
+body {
+  background: black;
+  color: rgb(161, 161, 161);
 }
 
 .slide {
-width: 100vw;
-height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 .wrapper {
-display: flex;
-flex-direction: row;
-width: 400vw;
-
+  display: flex;
+  flex-direction: row;
+  width: 400vw;
 }
 
 .sidenav {
-    position: fixed;
-    padding-top: 20px;
+  position: fixed;
+  padding-top: 20px;
 }
-    
+
 .sidenav a {
-    display: block;
+  display: block;
 }
 
 .sidenav img {
-    padding: 6px 6px 6px 6px;
-    transition: transform .2s; /* Animation */
+  padding: 6px 6px 6px 6px;
+  transition: transform 0.2s; /* Animation */
 }
 .sidenav img:hover {
-    transform: scale(1.5);
+  transform: scale(1.5);
 }
-
 
 .one {
-display: flex;
-justify-content: center;   
-align-items: center;
-background-color: #3a1998;
-background-image: linear-gradient(90deg, #3a1998 0%, #241253 30% ,black 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a1998;
+  background-image: linear-gradient(90deg, #3a1998 0%, #241253 30%, black 100%);
 }
 
-.apresentacao{
-    
+.apresentacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 .apresentacao-descrição {
-
-  }
-
-.apresentacao-img-pefil{
-    border-radius: 50%;
-    height: 250px;
-    width: 250px;
-    border: 10px outset #AA88FF;
-    padding: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
 }
-.apresentacao-titulo{
-    border-bottom: 2px solid #AA88FF;
-    margin-bottom: 10px;
+
+.apresentacao-sobre {
+  font-family: "Poppins", sans-serif;
+}
+
+.apresentacao-img-pefil {
+  display: flex;
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  border: 10px outset #aa88ff;
+  padding: 5px;
+}
+.apresentacao-titulo {
+  display: flex;
+  border-bottom: 2px solid #aa88ff;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
 }
 
 .two {
@@ -78,66 +85,61 @@ background-image: linear-gradient(90deg, #3a1998 0%, #241253 30% ,black 100%);
 .four {
 }
 
-
-   
-    
 .load-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    animation: animateBackgroundC0olor 10s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: animateBackgroundC0olor 10s linear infinite;
 }
 
-
 .loading {
-    position: relative;
-    width: 250px;
-    height: 250px;
+  position: relative;
+  width: 250px;
+  height: 250px;
 }
 
 .loading .blocks {
-    position: absolute;
-    width: 8px;
-    height: 25px;
-    left: 50%;
-    border-radius: 8px;
-    transform: rotate(calc(18deg * var(--i)));
-    transform-origin: 0 125px;
-    animation: animate 1.9s ease-in-out infinite;
-    animation-delay: calc(0.05s * var(--i));
+  position: absolute;
+  width: 8px;
+  height: 25px;
+  left: 50%;
+  border-radius: 8px;
+  transform: rotate(calc(18deg * var(--i)));
+  transform-origin: 0 125px;
+  animation: animate 1.9s ease-in-out infinite;
+  animation-delay: calc(0.05s * var(--i));
 }
 
 @keyframes animate {
-    0%,50% {
-        background: #383737;
-        box-shadow: none;
-    }
-    50.1%,100% {
-        background: #AA88FF;
-
-    }
+  0%,
+  50% {
+    background: #383737;
+    box-shadow: none;
+  }
+  50.1%,
+  100% {
+    background: #aa88ff;
+  }
 }
 
 h3 {
-    position: absolute;
-    font-family: 'Playfair Display SC', georgia;
-    color: white;
-    top: 40%;
-    left: 18%;
-    font-size: 2em;
-    letter-spacing: 4px;
-    animation: bounce 1s alternate;
-    animation-duration: 4s;
+  position: absolute;
+  font-family: "Playfair Display SC", georgia;
+  color: white;
+  top: 40%;
+  left: 18%;
+  font-size: 2em;
+  letter-spacing: 4px;
+  animation: bounce 1s alternate;
+  animation-duration: 4s;
 }
 
-
 @keyframes bounce {
-    from {
-      transform: translatex(300px);
-    }
-    to {
-      transform: translateY(0px);
-    }
+  from {
+    transform: translatex(300px);
   }
-  
+  to {
+    transform: translateY(0px);
+  }
+}
