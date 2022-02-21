@@ -1,1 +1,0 @@
-# teladv-landing-page

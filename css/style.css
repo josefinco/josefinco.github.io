@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body{
+    background: black;
+    color: rgb(161, 161, 161);
+}
+
+.slide {
+width: 100vw;
+height: 100vh;
+}
+
+.wrapper {
+display: flex;
+flex-direction: row;
+width: 400vw;
+
+}
+
+.sidenav {
+    position: fixed;
+    padding-top: 20px;
+}
+    
+.sidenav a {
+    display: block;
+}
+
+.sidenav img {
+    padding: 6px 6px 6px 6px;
+    transition: transform .2s; /* Animation */
+}
+.sidenav img:hover {
+    transform: scale(1.5);
+}
+
+
+.one {
+display: flex;
+justify-content: center;   
+align-items: center;
+background-color: #3a1998;
+background-image: linear-gradient(90deg, #3a1998 0%, #241253 30% ,black 100%);
+}
+
+.apresentacao{
+    
+}
+
+
+.apresentacao-descrição {
+
+  }
+
+.apresentacao-img-pefil{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    border: 10px outset #AA88FF;
+    padding: 5px;
+}
+.apresentacao-titulo{
+    border-bottom: 2px solid #AA88FF;
+    margin-bottom: 10px;
+}
+
+.two {
+}
+
+.three {
+}
+
+.four {
+}
+
+
+   
+    
+.load-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: animateBackgroundC0olor 10s linear infinite;
+}
+
+
+.loading {
+    position: relative;
+    width: 250px;
+    height: 250px;
+}
+
+.loading .blocks {
+    position: absolute;
+    width: 8px;
+    height: 25px;
+    left: 50%;
+    border-radius: 8px;
+    transform: rotate(calc(18deg * var(--i)));
+    transform-origin: 0 125px;
+    animation: animate 1.9s ease-in-out infinite;
+    animation-delay: calc(0.05s * var(--i));
+}
+
+@keyframes animate {
+    0%,50% {
+        background: #383737;
+        box-shadow: none;
+    }
+    50.1%,100% {
+        background: #AA88FF;
+
+    }
+}
+
+h3 {
+    position: absolute;
+    font-family: 'Playfair Display SC', georgia;
+    color: white;
+    top: 40%;
+    left: 18%;
+    font-size: 2em;
+    letter-spacing: 4px;
+    animation: bounce 1s alternate;
+    animation-duration: 4s;
+}
+
+
+@keyframes bounce {
+    from {
+      transform: translatex(300px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
+  
