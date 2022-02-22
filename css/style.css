@@ -77,12 +77,113 @@ body {
 }
 
 .two {
+  background-color: #3a1998;
+  background-image: linear-gradient(90deg, black 50%, #241253 100%);
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "TITULO"
+    "icones"
+    ". ";
+}
+
+.icones {
+  grid-area: icones;
+  justify-self: center;
+}
+
+.icones-img {
+  height: 75px;
+  margin: 20px;
+  border: 4px solid#555;
+  border-radius: 50%;
+  padding: 5px;
+  border-radius: 25px;
+  color: #fff;
+  box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #aa88ff, 0 0 20px #aa88ff,
+    0 0 30px #aa88ff;
+}
+
+.TITULO {
+  margin-top: 40px;
+  font-size: 42px;
+  grid-area: TITULO;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 30px;
+  font-weight: bold;
+}
+
+.TITULO::after {
+  content: "";
+  display: inline-block;
+  width: 250px;
+  height: 5px;
+  background: #aa88ff;
+  box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #aa88ff, 0 0 20px #aa88ff,
+    0 0 30px #aa88ff;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
 
 .three {
+  background-color: #3a1998;
+  background-image: linear-gradient(90deg, #241253 50%, black 100%);
 }
 
 .four {
+  background-color: #3a1998;
+  background-image: linear-gradient(90deg, black 50%, #241253 100%);
+}
+
+.loading-text {
+  position: absolute;
+  font-family: "Playfair Display SC", georgia;
+  color: white;
+  top: 40%;
+  left: 18%;
+  font-size: 2em;
+  letter-spacing: 4px;
+  animation: bounce 1s alternate;
+  animation-duration: 4s;
 }
 
 .load-section {
@@ -90,7 +191,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  animation: animateBackgroundC0olor 10s linear infinite;
 }
 
 .loading {
@@ -123,23 +223,35 @@ body {
   }
 }
 
-h3 {
-  position: absolute;
-  font-family: "Playfair Display SC", georgia;
-  color: white;
-  top: 40%;
-  left: 18%;
-  font-size: 2em;
-  letter-spacing: 4px;
-  animation: bounce 1s alternate;
-  animation-duration: 4s;
-}
-
 @keyframes bounce {
   from {
     transform: translatex(300px);
   }
   to {
     transform: translateY(0px);
+  }
+}
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
