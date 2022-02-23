@@ -37,7 +37,6 @@ body {
 
 /* Override default scrollbar */
 ::-webkit-scrollbar {
-  
   width: 16px;
   background-color: #333333;
 }
@@ -49,17 +48,14 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #aa88ff;
   box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #aa88ff, 0 0 20px #aa88ff,
-  0 0 30px #aa88ff;
+    0 0 30px #aa88ff;
 }
 
 /* Customize Track */
 ::-webkit-scrollbar-track {
   border-radius: 10px;
   background: linear-gradient(180deg, #3a1998 0%, black 100%);
-
 }
-
-
 
 .sidenav {
   position: fixed;
