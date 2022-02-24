@@ -8,6 +8,7 @@
 body {
   background: black;
   color: rgb(161, 161, 161);
+  font-family: "Poppins", sans-serif;
 }
 
 .slide {
@@ -19,14 +20,13 @@ body {
   display: flex;
   flex-direction: row;
   width: 400vw;
-  transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
+  transform: rotate(90deg) translateY(-100vh);
 }
-
 .outer-wrapper {
+  transform: rotate(-90deg) translateX(-100vh);
   width: 100vh;
   height: 100vw;
-  transform: rotate(-90deg) translateX(-100vh);
   transform-origin: top left;
   overflow-y: auto;
   overflow-x: hidden;
@@ -193,7 +193,7 @@ body {
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 8px ;
+  padding: 8px;
   position: absolute;
   z-index: 1;
   left: 50%;
@@ -215,12 +215,37 @@ body {
   animation: fadeIn 2s;
 }
 
-
-
-
 .three {
   background-color: #3a1998;
   background-image: linear-gradient(90deg, #241253 50%, black 100%);
+}
+
+.container-about {
+  display: flex;
+  align-items: center;
+  grid-template-columns: 1fr 3fr;
+  height: 100%;
+}
+
+.container-about h2 {
+  background-color: red;
+  font-size: 48px;
+}
+
+.imagem-about {
+  margin-left: 40px;
+  height: 600px;
+  width: 600px;
+  justify-content: start;
+  border-radius: 25%;
+}
+
+.container-about .titleabout {
+  margin-top: 40px;
+  font-size: 42px;
+  text-align: center;
+  letter-spacing: 30px;
+  font-weight: bold;
 }
 
 .four {
@@ -285,8 +310,6 @@ body {
     transform: translateY(0px);
   }
 }
-
-
 
 @-webkit-keyframes fadeIn {
   from {
