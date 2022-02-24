@@ -184,30 +184,39 @@ body {
 }
 
 .popup .popuptext {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
   visibility: hidden;
   width: 160px;
-  background-color: #555;
+  background-color: #3a1998;
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 8px 0;
+  padding: 8px ;
   position: absolute;
   z-index: 1;
-  bottom: 125%;
   left: 50%;
   margin-left: -80px;
+  box-shadow: 0 0 2px #fff, 0 0 5px #fff;
 }
 
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
+.popup .showup {
+  visibility: visible;
+  bottom: 125%;
+  -webkit-animation: fadeIn 2s;
+  animation: fadeIn 2s;
 }
+
+.popup .showdown {
+  visibility: visible;
+  top: 125%;
+  -webkit-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+}
+
+
+
 
 .three {
   background-color: #3a1998;
@@ -277,15 +286,12 @@ body {
   }
 }
 
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
+
 
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
+    box-shadow: none;
   }
   to {
     opacity: 1;
@@ -295,6 +301,7 @@ body {
 @keyframes fadeIn {
   from {
     opacity: 0;
+    box-shadow: none;
   }
   to {
     opacity: 1;

@@ -7,17 +7,16 @@ array.forEach((item,index) => {
     //TODO: ADICIONAR TRANSIÇÃO NO INDEX
 
     if(index%2==0){
-      item.lastElementChild.classList.toggle("show");
-      console.log("PRA cima");
+      item.lastElementChild.classList.toggle("showup");
     }else{
-      console.log("PRA BAIXO");
-      item.lastElementChild.classList.toggle("show");
+      item.lastElementChild.classList.toggle("showdown");
     }
   })
 });
 
 array.forEach(item => {
   item.addEventListener('mouseleave', event => {
-    item.lastElementChild.classList.remove("show");
+    item.lastElementChild.classList.remove("showup");
+    item.lastElementChild.classList.remove("showdown");
   })
 });
