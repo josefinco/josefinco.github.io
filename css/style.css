@@ -155,19 +155,21 @@ body {
 }
 
 .TITULO {
+  width: 100vw;
+  color: white;
   margin-top: 40px;
+  margin-bottom: 50px;
   font-size: 42px;
-  grid-area: TITULO;
   text-align: center;
-  font-family: "Poppins", sans-serif;
-  letter-spacing: 30px;
+  letter-spacing: 10px;
   font-weight: bold;
+  grid-area: TITULO;
 }
 
 .TITULO::after {
   content: "";
   display: inline-block;
-  width: 250px;
+  width: 90%;
   height: 5px;
   background: #aa88ff;
   box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #aa88ff, 0 0 20px #aa88ff,
@@ -236,13 +238,35 @@ body {
 }
 
 .textabout h1 {
-  color: white;
   width: 100vw;
+  color: white;
   margin-top: 40px;
+  margin-bottom: 50px;
+
+  font-size: 42px;
+  text-align: center;
+  letter-spacing: 10px;
+  font-weight: bold;
+
+  /* color: white;
+  width: 100vw;
+  margin-top: 80px;
+  margin-bottom: 50px;
   font-size: 42px;
   text-align: center;
   align-self: top;
-  letter-spacing: 30px;
+  letter-spacing: 15px; */
+}
+
+.textabout h1::after {
+  content: "";
+  margin: 25px;
+  display: flex;
+  width: 90%;
+  height: 5px;
+  background: #aa88ff;
+  box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #aa88ff, 0 0 20px #aa88ff,
+    0 0 30px #aa88ff;
 }
 
 .textabout p {
@@ -250,6 +274,11 @@ body {
   color: white;
   width: 100vw;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.content-about{
+  align-self: center;
 }
 
 .four {
@@ -337,19 +366,26 @@ body {
 
 @media (max-width: 600px) {
   .imagem-about {
-    height: 300px;
-    width: 300px;
+    height: 100vw;
+    width: 300vh;
     align-self: center;
   }
   .textabout h1 {
-    font-size: 20px;
-    margin-top: 17px;
+    font-size: 42px;
+    margin-top: 40px;
     letter-spacing: 4px;
+    margin-bottom: 10px;
   }
   .textabout p {
+    display: list-item;
     font-size: 10px;
     letter-spacing: 4px;
     justify-content: center;
+    margin-bottom: 10px;
   }
+
+  
+
+  
 
 }
