@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
   text-decoration: none;
 }
 
@@ -75,7 +74,9 @@ body {
   transform: scale(1.5);
 }
 
+/* INICIO SLIDE 1 APRESENTAÇÃO */
 .one {
+  width: 400vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,6 +108,8 @@ body {
   border-radius: 50%;
   height: 250px;
   width: 250px;
+  box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #aa88ff, 0 0 20px #aa88ff,
+  0 0 30px #aa88ff;
   border: 10px outset #aa88ff;
   padding: 5px;
 }
@@ -116,8 +119,84 @@ body {
   margin-bottom: 10px;
   font-family: "Poppins", sans-serif;
 }
+/* TERMINO SLIDE 1 APRESENTAÇÃO */
 
+/* INICIO SLIDE 2 */
 .two {
+  width: 400vw;
+  background-color: #3a1998;
+  background-image: linear-gradient(90deg, black 50%, #241253 100%);
+}
+
+
+.container-about {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-self: center;
+}
+
+
+.textabout{
+  text-align: center;
+  width: 100%;
+}
+
+.textabout h1 {
+  color: white;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  font-size: 42px;
+  text-align: center;
+  letter-spacing: 10px;
+  font-weight: bold;
+
+}
+
+.textabout h1::after {
+  content: "";
+  margin: 25px;
+  display: flex;
+  width: 90%;
+  height: 5px;
+  background: #aa88ff;
+  box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #aa88ff, 0 0 20px #aa88ff,
+    0 0 30px #aa88ff;
+}
+
+.textabout p {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.imagem-about {
+  
+  width: 50%;
+  margin-top: 40px;
+  animation-duration: 3s;
+  animation-name: bounce;
+
+  }
+
+/* TERMINO SLIDE 2 */
+
+/* INICIO SLIDE 3 */
+.three {
+  width: 400vw;
+  background-color: #3a1998;
+  background-image: linear-gradient(90deg, #241253 50%, black 100%);
+}
+
+
+/* TERMINO SLIDE 3 */
+
+
+/* INICIO SLIDE 4 */
+.four {
+  width: 400vw;
   background-color: #3a1998;
   background-image: linear-gradient(90deg, black 50%, #241253 100%);
 }
@@ -168,7 +247,8 @@ body {
 
 .TITULO::after {
   content: "";
-  display: inline-block;
+  margin: 25px;
+  display: flex;
   width: 90%;
   height: 5px;
   background: #aa88ff;
@@ -217,112 +297,11 @@ body {
   -webkit-animation: fadeIn 2s;
   animation: fadeIn 2s;
 }
+/* TERMINO SLIDE 4 */
 
-.three {
-  background-color: #3a1998;
-  background-image: linear-gradient(90deg, #241253 50%, black 100%);
-}
 
-.container-about {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
 
-.imagem-about {
-  margin-top: 40px;
-  margin-left: 40px;
-  justify-content: start;
-  max-width: 100%;
-  height: auto;
-}
-
-.textabout h1 {
-  width: 100vw;
-  color: white;
-  margin-top: 40px;
-  margin-bottom: 50px;
-
-  font-size: 42px;
-  text-align: center;
-  letter-spacing: 10px;
-  font-weight: bold;
-
-  /* color: white;
-  width: 100vw;
-  margin-top: 80px;
-  margin-bottom: 50px;
-  font-size: 42px;
-  text-align: center;
-  align-self: top;
-  letter-spacing: 15px; */
-}
-
-.textabout h1::after {
-  content: "";
-  margin: 25px;
-  display: flex;
-  width: 90%;
-  height: 5px;
-  background: #aa88ff;
-  box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #aa88ff, 0 0 20px #aa88ff,
-    0 0 30px #aa88ff;
-}
-
-.textabout p {
-  font-size: 18px;
-  color: white;
-  width: 100vw;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.content-about{
-  align-self: center;
-}
-
-.four {
-  background-color: #3a1998;
-  background-image: linear-gradient(90deg, black 50%, #241253 100%);
-}
-
-.loading-text {
-  position: absolute;
-  font-family: "Playfair Display SC", georgia;
-  color: white;
-  top: 40%;
-  left: 18%;
-  font-size: 2em;
-  letter-spacing: 4px;
-  animation: bounce 1s alternate;
-  animation-duration: 4s;
-}
-
-.load-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.loading {
-  position: relative;
-  width: 250px;
-  height: 250px;
-}
-
-.loading .blocks {
-  position: absolute;
-  width: 8px;
-  height: 25px;
-  left: 50%;
-  border-radius: 8px;
-  transform: rotate(calc(18deg * var(--i)));
-  transform-origin: 0 125px;
-  animation: animate 1.9s ease-in-out infinite;
-  animation-delay: calc(0.05s * var(--i));
-}
-
+/* ANIMAÇÕES E MEDIA QUERY */
 @keyframes animate {
   0%,
   50% {
@@ -365,11 +344,7 @@ body {
 }
 
 @media (max-width: 600px) {
-  .imagem-about {
-    height: 100vw;
-    width: 300vh;
-    align-self: center;
-  }
+
   .textabout h1 {
     font-size: 42px;
     margin-top: 40px;
@@ -377,15 +352,11 @@ body {
     margin-bottom: 10px;
   }
   .textabout p {
-    display: list-item;
     font-size: 10px;
     letter-spacing: 4px;
     justify-content: center;
     margin-bottom: 10px;
   }
-
-  
-
   
 
 }
