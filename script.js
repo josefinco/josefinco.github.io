@@ -20,3 +20,4 @@ array.forEach(item => {
     item.lastElementChild.classList.remove("showdown");
   })
 });
+
