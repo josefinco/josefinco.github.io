@@ -36,7 +36,6 @@ body {
 
 /* Override default scrollbar */
 ::-webkit-scrollbar {
-  display: none;
   width: 16px;
   background-color: #333333;
   
