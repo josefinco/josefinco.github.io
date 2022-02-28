@@ -37,7 +37,7 @@ html {
   -ms-overflow-style: none;
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 16px;
   background-color: #333333;
 }
@@ -54,7 +54,7 @@ html {
 ::-webkit-scrollbar-track {
   border-radius: 10px;
   background: linear-gradient(180deg, #3a1998 0%, black 100%);
-} */
+}
 
 .sidenav {
   position: fixed;
@@ -168,8 +168,8 @@ html {
 .imagem-about {
   width: 50%;
   margin-top: 40px;
-  animation-duration: 3s;
-  animation-name: bounce;
+  /* animation-duration: 3s;
+  animation-name: bounce; */
 }
 
 /* TERMINO SLIDE 2 */
@@ -192,8 +192,8 @@ html {
 
 .timeline h1 {
   animation-duration: 5s;
-  color: transparent;
-  animation-name: fadeout;
+  /* color: transparent; */
+  /* animation-name: fadeout; */
   /* name duration timing-function delay iteration-count direction  fill-mode; */
 }
 
@@ -421,6 +421,24 @@ html {
 }
 /* TERMINO SLIDE 4 */
 
+[data-anime] {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+[data-anime="left"] {
+  transform: translate3d(50px, 0, 0);
+}
+
+[data-anime="right"] {
+  transform: translate3d(50px, 0, 0);
+}
+
+[data-anime].animate {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+}
+
 /* ANIMAÇÕES E MEDIA QUERY */
 @keyframes animate {
   0%,
@@ -460,30 +478,6 @@ html {
   }
   to {
     opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeout {
-  from {
-    color: whitesmoke;
-    opacity: 1;
-  }
-  to {
-    color: whitesmoke;
-    box-shadow: none;
-    opacity: 0;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    color: whitesmoke;
-    opacity: 1;
-  }
-  to {
-    color: whitesmoke;
-    box-shadow: none;
-    opacity: 0;
   }
 }
 
