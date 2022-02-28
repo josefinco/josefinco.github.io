@@ -1,3 +1,11 @@
+var root = document.documentElement;
+root.className += ' js';
+
+function boxTop(idBox) {
+  var boxOffset = $(idBox).offset().top;
+  return boxOffset;
+}
+
 var elementos = document.querySelectorAll('.popup')
 let array = Array.from(elementos);
 
@@ -20,4 +28,29 @@ array.forEach(item => {
     item.lastElementChild.classList.remove("showdown");
   })
 });
+
+
+$(document).ready(function() {
+  var $target = $('.anime'),
+      animationClass = 'anime-init',
+      windowHeight = $(window).height(),
+      offset = windowHeight - (windowHeight / 4);
+
+  function animeScroll() {
+    var documentTop = $(document).scrollTop();
+    $target.each(function() {
+      if (documentTop > boxTop(this) - offset) {
+        $(this).addClass(animationClass);
+      } else {
+        $(this).removeClass(animationClass);
+      }
+    });
+  }
+  animeScroll();
+
+  $(document).scroll(function() {
+    animeScroll();
+  });
+});
+
 

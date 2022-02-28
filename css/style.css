@@ -7,8 +7,11 @@
 
 body {
   background: black;
-  color: rgb(161, 161, 161);
+  color: whitesmoke;
   font-family: "Poppins", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 .slide {
@@ -34,12 +37,10 @@ body {
   -ms-overflow-style: none;
 }
 
-/* Override default scrollbar */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 16px;
   background-color: #333333;
 }
-/* Customize Thumb */
 ::-webkit-scrollbar-thumb {
   background-color: #aa88ff;
   border-radius: 10px;
@@ -50,11 +51,10 @@ body {
     0 0 30px #aa88ff;
 }
 
-/* Customize Track */
 ::-webkit-scrollbar-track {
   border-radius: 10px;
   background: linear-gradient(180deg, #3a1998 0%, black 100%);
-}
+} */
 
 .sidenav {
   position: fixed;
@@ -92,14 +92,12 @@ body {
 .apresentacao-descrição {
   text-align: center;
   display: flex;
-  font-family: "Poppins", sans-serif;
   font-weight: bold;
 }
 
 .apresentacao-sobre {
   text-align: center;
   display: flex;
-  font-family: "Poppins", sans-serif;
 }
 
 .apresentacao-img-pefil {
@@ -116,7 +114,6 @@ body {
   display: flex;
   border-bottom: 2px solid #aa88ff;
   margin-bottom: 10px;
-  font-family: "Poppins", sans-serif;
 }
 /* TERMINO SLIDE 1 APRESENTAÇÃO */
 
@@ -165,7 +162,7 @@ body {
   font-size: 18px;
   color: white;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 3px;
 }
 
 .imagem-about {
@@ -191,6 +188,13 @@ body {
   margin-top: 20px;
   padding: 1em 0;
   list-style-type: none;
+}
+
+.timeline h1 {
+  animation-duration: 5s;
+  color: transparent;
+  animation-name: fadeout;
+  /* name duration timing-function delay iteration-count direction  fill-mode; */
 }
 
 .timeline:before {
@@ -386,7 +390,6 @@ body {
 }
 
 .popup .popuptext {
-  font-family: "Poppins", sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
   visibility: hidden;
@@ -460,6 +463,30 @@ body {
   }
 }
 
+@-webkit-keyframes fadeout {
+  from {
+    color: whitesmoke;
+    opacity: 1;
+  }
+  to {
+    color: whitesmoke;
+    box-shadow: none;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    color: whitesmoke;
+    opacity: 1;
+  }
+  to {
+    color: whitesmoke;
+    box-shadow: none;
+    opacity: 0;
+  }
+}
+
 @media (max-width: 600px) {
   .textabout h1 {
     font-size: 1.2em;
@@ -469,7 +496,7 @@ body {
   }
   .textabout p {
     font-size: 0.777777em;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     justify-content: center;
     margin-bottom: 10px;
   }
@@ -524,12 +551,5 @@ body {
 
   .TITULO {
     font-size: 1.2em;
-  }
-}
-
-@media screen and (min-width: 400px ?? max-width: 660px) {
-  .direction-l .desc,
-  .direction-r .desc {
-    margin: 1em 4em 0 4em;
   }
 }
