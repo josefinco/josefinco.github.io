@@ -1,3 +1,13 @@
+window.onload = function() {
+  setTimeout(function() {
+    var preloader = document.getElementById('loader');
+    if( !preloader.classList.contains('done') )
+    {
+      preloader.classList.add('done');
+    }
+  }, 1000)
+}
+
 var elementos = document.querySelectorAll('.popup')
 let array = Array.from(elementos);
 
