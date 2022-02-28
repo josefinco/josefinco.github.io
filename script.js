@@ -14,8 +14,6 @@ let array = Array.from(elementos);
 
 array.forEach((item,index) => {
   item.addEventListener('mouseenter', event => {
-    //TODO: ADICIONAR TRANSIÇÃO NO INDEX
-
     if(index%2==0){
       item.lastElementChild.classList.toggle("showup");
     }else{
@@ -59,7 +57,7 @@ function animate() {
     relativePos.right = childPos.right - parentPos.right,
     relativePos.bottom = childPos.bottom - parentPos.bottom,
     relativePos.left = childPos.left - parentPos.left;
-    const windowTop = Math.abs(relativePos.left)+ 500 ;
+    const windowTop = (Math.abs(relativePos.left * 3) / 4) ;
 
     target.forEach(function(element){
       childPos = document.querySelector('.wrapper').getBoundingClientRect(),

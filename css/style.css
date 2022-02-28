@@ -93,11 +93,15 @@ html {
   text-align: center;
   display: flex;
   font-weight: bold;
+  animation-duration: 3s;
+  animation-name: bounce;
 }
 
 .apresentacao-sobre {
   text-align: center;
   display: flex;
+  animation-duration: 3s;
+  animation-name: bounce;
 }
 
 .apresentacao-img-pefil {
@@ -484,15 +488,19 @@ html {
 @media (max-width: 600px) {
   .textabout h1 {
     font-size: 1.2em;
-    margin-top: 40px;
-    letter-spacing: 4px;
+    margin-top: 20px;
+    letter-spacing: 2px;
     margin-bottom: 10px;
   }
   .textabout p {
     font-size: 0.777777em;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     justify-content: center;
     margin-bottom: 10px;
+  }
+
+  .textabout h1::after {
+    margin: 10px;
   }
 
   .timeline {
