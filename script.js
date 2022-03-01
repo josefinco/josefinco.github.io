@@ -1,5 +1,6 @@
 // Preloader
 window.onload = function() {
+  typeWriter(document.querySelector('.loading'));
   setTimeout(function() {
     var preloader = document.getElementById('loader');
     if( !preloader.classList.contains('done') )
@@ -7,7 +8,7 @@ window.onload = function() {
       preloader.classList.add('done');
       typeWriter(titulo);
     }
-  }, 1000)
+  }, 1100)
 }
 
 // animação POPUP
@@ -94,7 +95,7 @@ windowPage.addEventListener('wheel', debounce(function(){
 }, 200));
 
 // Animação máquina de escrever
-const titulo = document.querySelector('h1');
+const titulo = document.querySelector('.apresentacao-titulo');
 
 function typeWriter(elemento){
 const textoArray = elemento.innerHTML.split('');

@@ -179,21 +179,41 @@ html {
 /* INICIO SLIDE 3 */
 .three {
   width: 400vw;
+  position: relative;
   background-color: #3a1998;
   background-image: linear-gradient(90deg, #241253 50%, black 100%);
 }
 
+.containerbackground {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 1;
+}
+
+.textbackground {
+  font-size: 90px;
+  margin-top: 80px;
+  text-align: center;
+  font-family: Impact;
+  opacity: 50%;
+  margin-top: 70%;
+  background-image: url("/img/img-bg.jpg");
+  background-position: center;
+  -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0);
+  text-transform: uppercase;
+}
+
 .timeline {
+  height: 90vh;
+  width: 100vw;
   position: relative;
   width: 660px;
   margin: 0 auto;
   margin-top: 20px;
   padding: 1em 0;
   list-style-type: none;
-}
-
-.timeline h1 {
-  animation-duration: 5s;
 }
 
 .timeline:before {
@@ -252,6 +272,7 @@ html {
 }
 
 .timeline li {
+  list-style: none;
   padding: 1em 0;
 }
 
@@ -449,6 +470,11 @@ html {
   opacity: 1;
   animation-duration: 1s;
   animation-name: bounce;
+}
+
+[data-animetext].animebg {
+  opacity: 30%;
+  transition: 1s;
 }
 
 /* ANIMAÇÕES E MEDIA QUERY */
