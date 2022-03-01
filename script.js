@@ -1,17 +1,18 @@
+// Preloader
 window.onload = function() {
   setTimeout(function() {
     var preloader = document.getElementById('loader');
     if( !preloader.classList.contains('done') )
     {
       preloader.classList.add('done');
+      typeWriter(titulo);
     }
   }, 1000)
 }
 
+// animação POPUP
 var elementos = document.querySelectorAll('.popup')
 let array = Array.from(elementos);
-
-
 array.forEach((item,index) => {
   item.addEventListener('mouseenter', event => {
     if(index%2==0){
@@ -29,6 +30,7 @@ array.forEach(item => {
   })
 });
 
+// Debounce Scroll/Whell
 const debounce = function(func, wait, immediate) {
   let timeout;
   return function(...args) {
@@ -44,35 +46,45 @@ const debounce = function(func, wait, immediate) {
   };
 };
 
+
+// Animação Scroll
 const target = document.querySelectorAll('[data-anime]');
+const textTarget = document.querySelectorAll('[data-animetext]');
 const animationClass = 'animate';
+const animationTextClass = 'animetext';
 var windowPage = document.querySelector('.outer-wrapper')
 
 function animate() {
-
   var parentPos = document.querySelector('.outer-wrapper').getBoundingClientRect(),
   childPos = document.querySelector('.wrapper').getBoundingClientRect(),
+
     relativePos = {};
-    relativePos.top = childPos.top - parentPos.top,
-    relativePos.right = childPos.right - parentPos.right,
-    relativePos.bottom = childPos.bottom - parentPos.bottom,
     relativePos.left = childPos.left - parentPos.left;
     const windowTop = (Math.abs(relativePos.left * 3) / 4) ;
 
+    textTarget.forEach(function(element){
+      relativeTargetPos =  element.getBoundingClientRect().left - parentPos.left;
+      const targetTop = Math.abs(relativeTargetPos);
+      if (windowTop > targetTop){
+        element.classList.add(animationTextClass);
+      }else{
+        element.classList.remove(animationTextClass);
+      }
+
+    })
+
     target.forEach(function(element){
-      childPos = document.querySelector('.wrapper').getBoundingClientRect(),
-      relativeTargetPos = {};
-      relativeTargetPos.top =  element.getBoundingClientRect().top - parentPos.top,
-      relativeTargetPos.right =  element.getBoundingClientRect().right - parentPos.right,
-      relativeTargetPos.bottom =  element.getBoundingClientRect().bottom - parentPos.bottom,
-      relativeTargetPos.left =  element.getBoundingClientRect().left - parentPos.left;
-      const targetTop = Math.abs(relativeTargetPos.left);
-      if (windowTop > (element.getBoundingClientRect().left - parentPos.left)){
+     relativeTargetPos =  element.getBoundingClientRect().left - parentPos.left;
+      const targetTop = Math.abs(relativeTargetPos);
+      if (windowTop > targetTop){
         element.classList.add(animationClass);
       }else{
         element.classList.remove(animationClass);
       }
+
     })
+
+  
 }
 
 animate();
@@ -81,4 +93,14 @@ windowPage.addEventListener('wheel', debounce(function(){
   animate();
 }, 200));
 
+// Animação máquina de escrever
+const titulo = document.querySelector('h1');
 
+function typeWriter(elemento){
+const textoArray = elemento.innerHTML.split('');
+elemento.innerHTML = '';
+textoArray.forEach((letra, index) => {
+  setTimeout(() => elemento.innerHTML += letra, 75*index )
+});
+
+}

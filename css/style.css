@@ -172,8 +172,6 @@ html {
 .imagem-about {
   width: 50%;
   margin-top: 40px;
-  /* animation-duration: 3s;
-  animation-name: bounce; */
 }
 
 /* TERMINO SLIDE 2 */
@@ -196,9 +194,6 @@ html {
 
 .timeline h1 {
   animation-duration: 5s;
-  /* color: transparent; */
-  /* animation-name: fadeout; */
-  /* name duration timing-function delay iteration-count direction  fill-mode; */
 }
 
 .timeline:before {
@@ -430,12 +425,14 @@ html {
   transition: 0.3s;
 }
 
-[data-anime="left"] {
-  transform: translate3d(50px, 0, 0);
+[data-anime="bot"] {
+  transition: 2s;
+  transform: translate3d(0, 150px, 0);
 }
 
 [data-anime="right"] {
-  transform: translate3d(50px, 0, 0);
+  transition: 2s;
+  transform: translate3d(150px, 0, 0);
 }
 
 [data-anime].animate {
@@ -443,18 +440,18 @@ html {
   transform: translate3d(0px, 0px, 0px);
 }
 
-/* ANIMAÇÕES E MEDIA QUERY */
-@keyframes animate {
-  0%,
-  50% {
-    background: #383737;
-    box-shadow: none;
-  }
-  50.1%,
-  100% {
-    background: #aa88ff;
-  }
+[data-animetext] {
+  opacity: 0;
+  transition: 0.3s;
 }
+
+[data-animetext].animetext {
+  opacity: 1;
+  animation-duration: 1s;
+  animation-name: bounce;
+}
+
+/* ANIMAÇÕES E MEDIA QUERY */
 
 @keyframes bounce {
   from {
