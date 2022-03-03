@@ -56,9 +56,10 @@ const animationTextClass = 'animetext';
 var windowPage = document.querySelector('.outer-wrapper')
 
 function animate() {
+
+  
   var parentPos = document.querySelector('.outer-wrapper').getBoundingClientRect(),
   childPos = document.querySelector('.wrapper').getBoundingClientRect(),
-
     relativePos = {};
     relativePos.left = childPos.left - parentPos.left;
     const windowTop = (Math.abs(relativePos.left * 3) / 4) ;
@@ -93,6 +94,13 @@ animate();
 windowPage.addEventListener('wheel', debounce(function(){
   animate();
 }, 200));
+
+
+windowPage.addEventListener('touchmove', debounce(function(){
+  animate();
+}, 200));
+
+
 
 // Animação máquina de escrever
 const titulo = document.querySelector('.apresentacao-titulo');
