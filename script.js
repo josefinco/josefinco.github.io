@@ -1,6 +1,6 @@
 // Preloader
 window.onload = function() {
-  typeWriter(document.querySelector('.loading'));
+  typeWriter(document.querySelector('.loading'), 75);
   setTimeout(function() {
     var preloader = document.getElementById('loader');
     if( !preloader.classList.contains('done') )
@@ -64,11 +64,13 @@ function animate() {
     relativePos.left = childPos.left - parentPos.left;
     const windowTop = (Math.abs(relativePos.left * 3) / 4) ;
 
-    textTarget.forEach(function(element){
+    textTarget.forEach(function(element, index){
       relativeTargetPos =  element.getBoundingClientRect().left - parentPos.left;
       const targetTop = Math.abs(relativeTargetPos);
       if (windowTop > targetTop){
-        element.classList.add(animationTextClass);
+
+        setTimeout(() => element.classList.add(animationTextClass), 150*index )
+
       }else{
         element.classList.remove(animationTextClass);
       }
@@ -105,11 +107,11 @@ windowPage.addEventListener('touchmove', debounce(function(){
 // Animação máquina de escrever
 const titulo = document.querySelector('.apresentacao-titulo');
 
-function typeWriter(elemento){
+function typeWriter(elemento, tempo){
 const textoArray = elemento.innerHTML.split('');
 elemento.innerHTML = '';
 textoArray.forEach((letra, index) => {
-  setTimeout(() => elemento.innerHTML += letra, 75*index )
+  setTimeout(() => elemento.innerHTML += letra, tempo*index )
 });
 
 }
